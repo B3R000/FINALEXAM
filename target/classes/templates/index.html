@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ka" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Mercedes Showroom')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+
+<main>
+    <section class="hero">
+        <div>
+            <p class="eyebrow">Premium showroom</p>
+            <h1 th:text="${showroomName}">Mercedes-Benz Tbilisi Showroom</h1>
+            <p>მართე ელეგანტური, უსაფრთხო და თანამედროვე Mercedes-Benz ავტომობილების კატალოგი.</p>
+            <div class="hero-actions">
+                <a class="button primary" th:href="@{/cars}">კოლექციის ნახვა</a>
+                <a class="button ghost" th:href="@{/cars/new}">მანქანის დამატება</a>
+            </div>
+        </div>
+        <div class="hero-panel">
+            <img th:src="@{/images/showroom-hero.svg}" alt="Mercedes showroom">
+            <div class="hero-panel-content">
+                <span>Support</span>
+                <strong th:text="${supportEmail}">sales@mercedes-showroom.ge</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">
+            <h2>ბოლო დამატებული მოდელები</h2>
+            <a th:href="@{/cars}">ყველას ნახვა</a>
+        </div>
+        <div class="car-grid">
+            <article class="car-card" th:each="car : ${cars}">
+                <div class="car-media">
+                    <img th:if="${car.imageFileName != null}" th:src="@{'/uploads/' + ${car.imageFileName}}" alt="Car image">
+                    <img th:if="${car.imageFileName == null and car.category.name == 'SUV'}" th:src="@{/images/car-suv.svg}" alt="Mercedes SUV">
+                    <img th:if="${car.imageFileName == null and car.category.name != 'SUV'}" th:src="@{/images/car-sedan.svg}" alt="Mercedes sedan">
+                </div>
+                <div class="car-body">
+                    <h3 th:text="${car.model}">Mercedes-Benz C-Class</h3>
+                    <p th:text="${car.category.name + ' • ' + car.year + ' • ' + car.color}">Sedan • 2024 • Black</p>
+                    <strong th:text="${'$' + car.price}">$42000</strong>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+</body>
+</html>

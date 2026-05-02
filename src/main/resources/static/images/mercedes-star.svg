@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Mercedes star">
+    <circle cx="60" cy="60" r="55" fill="#17191c"/>
+    <circle cx="60" cy="60" r="47" fill="none" stroke="#ffffff" stroke-width="5"/>
+    <path d="M60 16 69 63 105 90 65 73 60 113 55 73 15 90 51 63Z" fill="#ffffff"/>
+</svg>

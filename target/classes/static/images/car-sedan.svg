@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" role="img" aria-label="Mercedes sedan">
+    <defs>
+        <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#f8fafc"/>
+            <stop offset="1" stop-color="#dbe2ea"/>
+        </linearGradient>
+        <linearGradient id="body" x1="0" x2="1">
+            <stop offset="0" stop-color="#111318"/>
+            <stop offset=".55" stop-color="#414a54"/>
+            <stop offset="1" stop-color="#f4f6f8"/>
+        </linearGradient>
+    </defs>
+    <rect width="900" height="506" fill="url(#bg)"/>
+    <path d="M72 334h756" stroke="#c5ced8" stroke-width="3"/>
+    <path d="M135 304c20-59 68-96 145-114l86-20c37-9 76-13 114-13h92c49 0 96 16 134 47l92 75c23 3 41 23 41 47v35H76v-22c0-18 14-32 32-33z" fill="url(#body)"/>
+    <path d="M318 210h144v77H230l42-48c13-18 27-29 46-29zM497 210h79c34 0 67 12 92 35l46 42H497z" fill="#d6e0e8"/>
+    <circle cx="244" cy="363" r="61" fill="#0e1114"/>
+    <circle cx="244" cy="363" r="27" fill="#e7edf3"/>
+    <circle cx="675" cy="363" r="61" fill="#0e1114"/>
+    <circle cx="675" cy="363" r="27" fill="#e7edf3"/>
+    <rect x="112" y="310" width="88" height="15" rx="7" fill="#00adef"/>
+    <rect x="743" y="310" width="64" height="15" rx="7" fill="#fff"/>
+</svg>

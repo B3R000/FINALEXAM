@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" role="img" aria-label="Mercedes showroom car">
+    <rect width="900" height="506" fill="#eef1f5"/>
+    <path d="M178 306c20-58 53-95 99-111l81-29c32-11 66-17 100-17h116c42 0 82 15 113 43l87 78c28 4 49 28 49 56v36H77v-25c0-17 13-31 30-32z" fill="#17191c"/>
+    <path d="M314 210h153v78H226l31-44c13-21 34-34 57-34zM497 210h79c29 0 57 11 78 31l50 47H497z" fill="#c9d4df"/>
+    <circle cx="238" cy="362" r="61" fill="#101214"/>
+    <circle cx="238" cy="362" r="29" fill="#dce3eb"/>
+    <circle cx="674" cy="362" r="61" fill="#101214"/>
+    <circle cx="674" cy="362" r="29" fill="#dce3eb"/>
+    <rect x="114" y="314" width="90" height="18" rx="9" fill="#00a6b2"/>
+    <rect x="726" y="314" width="70" height="18" rx="9" fill="#ffffff"/>
+</svg>

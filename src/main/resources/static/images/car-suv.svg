@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 506" role="img" aria-label="Mercedes SUV">
+    <defs>
+        <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#eef2f6"/>
+            <stop offset="1" stop-color="#cfd9e4"/>
+        </linearGradient>
+        <linearGradient id="body" x1="0" x2="1">
+            <stop offset="0" stop-color="#f6f7f9"/>
+            <stop offset=".48" stop-color="#8792a0"/>
+            <stop offset="1" stop-color="#20262d"/>
+        </linearGradient>
+    </defs>
+    <rect width="900" height="506" fill="url(#bg)"/>
+    <path d="M71 346h758" stroke="#b9c4d0" stroke-width="3"/>
+    <path d="M103 311c8-80 57-128 148-145l82-15c33-6 66-9 100-9h181c54 0 105 23 141 63l58 65c34 5 59 34 59 68v42H70v-33c0-20 14-35 33-36z" fill="url(#body)"/>
+    <path d="M312 199h151v96H205l43-59c17-23 38-37 64-37zM501 199h109c35 0 68 14 93 39l54 57H501z" fill="#e4ebf1"/>
+    <circle cx="248" cy="382" r="68" fill="#0c0f12"/>
+    <circle cx="248" cy="382" r="31" fill="#e8eef4"/>
+    <circle cx="680" cy="382" r="68" fill="#0c0f12"/>
+    <circle cx="680" cy="382" r="31" fill="#e8eef4"/>
+    <rect x="104" y="314" width="90" height="16" rx="8" fill="#00adef"/>
+    <rect x="771" y="314" width="68" height="16" rx="8" fill="#fff"/>
+</svg>

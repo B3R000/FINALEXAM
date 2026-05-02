@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: showroom
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+server:
+  port: 8080
+
+showroom:
+  name: "Mercedes-Benz Tbilisi Showroom"
+  support-email: "sales@mercedes-showroom.ge"
+  featured-limit: 3
+  upload-dir: "uploads"
+
+logging:
+  level:
+    ge.tsu.mercedes: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/showroom.log

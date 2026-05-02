@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ka" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Categories')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+
+<main class="page">
+    <div class="page-header">
+        <div>
+            <p class="eyebrow">Vehicle classes</p>
+            <h1>კატეგორიები</h1>
+        </div>
+    </div>
+
+    <div class="alert success" th:if="${successMessage}" th:text="${successMessage}"></div>
+
+    <section class="split">
+        <form class="form-panel" th:action="@{/categories}" th:object="${category}" method="post">
+            <label>
+                <span>კატეგორიის სახელი</span>
+                <input type="text" th:field="*{name}" placeholder="Coupe">
+                <small class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+            </label>
+            <label>
+                <span>აღწერა</span>
+                <textarea th:field="*{description}" rows="4" placeholder="Short description"></textarea>
+                <small class="error" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></small>
+            </label>
+            <button class="button primary" type="submit">კატეგორიის დამატება</button>
+        </form>
+
+        <div class="category-list">
+            <article class="category-item" th:each="item : ${categories}">
+                <h2 th:text="${item.name}">Sedan</h2>
+                <p th:text="${item.description}">Comfortable premium cars.</p>
+                <span th:text="${#lists.size(item.cars) + ' მანქანა'}">2 მანქანა</span>
+            </article>
+        </div>
+    </section>
+</main>
+</body>
+</html>

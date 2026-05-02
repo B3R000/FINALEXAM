@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ka" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Car form')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+
+<main class="page narrow">
+    <div class="page-header">
+        <div>
+            <p class="eyebrow">Showroom form</p>
+            <h1 th:text="${car.id == null ? 'მანქანის დამატება' : 'მანქანის რედაქტირება'}">მანქანის დამატება</h1>
+        </div>
+    </div>
+
+    <form class="form-panel"
+          th:action="${car.id == null ? '/cars' : '/cars/' + car.id}"
+          th:object="${car}"
+          method="post"
+          enctype="multipart/form-data">
+        <label>
+            <span>მოდელი</span>
+            <input type="text" th:field="*{model}" placeholder="Mercedes-Benz C-Class">
+            <small class="error" th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></small>
+        </label>
+
+        <div class="form-row">
+            <label>
+                <span>წელი</span>
+                <input type="number" th:field="*{year}" placeholder="2024">
+                <small class="error" th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></small>
+            </label>
+            <label>
+                <span>ფასი</span>
+                <input type="number" step="0.01" th:field="*{price}" placeholder="42000">
+                <small class="error" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></small>
+            </label>
+        </div>
+
+        <div class="form-row">
+            <label>
+                <span>ფერი</span>
+                <input type="text" th:field="*{color}" placeholder="Black">
+                <small class="error" th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></small>
+            </label>
+            <label>
+                <span>კატეგორია</span>
+                <select th:field="*{category}">
+                    <option value="">აირჩიე კატეგორია</option>
+                    <option th:each="category : ${categories}"
+                            th:value="${category.id}"
+                            th:text="${category.name}">Sedan</option>
+                </select>
+                <small class="error" th:if="${#fields.hasErrors('category')}" th:errors="*{category}"></small>
+            </label>
+        </div>
+
+        <label>
+            <span>საკონტაქტო ელფოსტა</span>
+            <input type="email" th:field="*{contactEmail}" placeholder="sales@mercedes-showroom.ge">
+            <small class="error" th:if="${#fields.hasErrors('contactEmail')}" th:errors="*{contactEmail}"></small>
+        </label>
+
+        <label>
+            <span>ფოტოს ატვირთვა</span>
+            <input type="file" name="image" accept="image/*">
+        </label>
+
+        <div class="form-actions">
+            <a class="button ghost" th:href="@{/cars}">გაუქმება</a>
+            <button class="button primary" type="submit">შენახვა</button>
+        </div>
+    </form>
+</main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ka" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Cars')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+
+<main class="page">
+    <div class="page-header">
+        <div>
+            <p class="eyebrow">Inventory</p>
+            <h1>ავტომობილები</h1>
+        </div>
+        <a class="button primary" th:href="@{/cars/new}">ახალი მანქანა</a>
+    </div>
+
+    <div class="alert success" th:if="${successMessage}" th:text="${successMessage}"></div>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+            <tr>
+                <th>ფოტო</th>
+                <th>მოდელი</th>
+                <th>კატეგორია</th>
+                <th>წელი</th>
+                <th>ფერი</th>
+                <th>ფასი</th>
+                <th>მოქმედება</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="car : ${cars}">
+                <td>
+                    <img class="thumb" th:if="${car.imageFileName != null}" th:src="@{'/uploads/' + ${car.imageFileName}}" alt="Car image">
+                    <img class="thumb" th:if="${car.imageFileName == null and car.category.name == 'SUV'}" th:src="@{/images/car-suv.svg}" alt="Car placeholder">
+                    <img class="thumb" th:if="${car.imageFileName == null and car.category.name != 'SUV'}" th:src="@{/images/car-sedan.svg}" alt="Car placeholder">
+                </td>
+                <td th:text="${car.model}">Mercedes-Benz C-Class</td>
+                <td th:text="${car.category.name}">Sedan</td>
+                <td th:text="${car.year}">2024</td>
+                <td th:text="${car.color}">Black</td>
+                <td th:text="${'$' + car.price}">$42000</td>
+                <td class="actions">
+                    <a class="button small" th:href="@{/cars/{id}/edit(id=${car.id})}">რედაქტირება</a>
+                    <form th:action="@{/cars/{id}/delete(id=${car.id})}" method="post" data-confirm-delete>
+                        <button class="button danger small" type="submit">წაშლა</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>
